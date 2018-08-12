@@ -40,13 +40,22 @@ postRouter.get('/', function (req, res) {
             return $("post").map(function () {
                 let result = this.attribs;
 
+                // get comments url
                 result.comments_url = process.env.HOST + '/comments?post_id=' + result.id;
+
+                // convert tags
                 result.tags = result.tags.split(" ")
                     .filter(tag => tag !== "");
-                    
                 result.tags.filter(function (item, pos) {
                     return result.tags.indexOf(item) == pos;
                 });
+
+                // get type
+                if(result.file_url.endsWith(".webm", ".mp4")) {
+                    result.type = "video";
+                } else {
+                    result.type = "image";
+                }
 
                 return result;
             }).get();
