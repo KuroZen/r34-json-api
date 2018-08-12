@@ -2,7 +2,7 @@ const express = require('express');
 const scraper = require('./scraper');
 const postRouter = express.Router();
 
-const baseUrl = 'https://rule34.xxx/index.php?page=dapi&s=post&q=index'
+const baseUrl = 'https://rule34.xxx/index.php?page=dapi&s=post&q=index';
 
 postRouter.get('/', function (req, res) {
     let url = baseUrl;
