@@ -1,0 +1,27 @@
+{
+  "name": "r34-json-api",
+  "version": "1.0.0",
+  "description": "simple wrapper for the rule34 api.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KuroZen/r34-json-api.git"
+  },
+  "keywords": [
+    "rule34"
+  ],
+  "author": "KuroZen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KuroZen/r34-json-api/issues"
+  },
+  "homepage": "https://github.com/KuroZen/r34-json-api#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "npm": "^6.3.0",
+    "scraperjs": "^1.2.0"
+  }
+}
