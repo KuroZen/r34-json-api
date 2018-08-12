@@ -51,7 +51,7 @@ postRouter.get('/', function (req, res) {
                 });
 
                 // get type
-                if(result.file_url.endsWith(".webm", ".mp4")) {
+                if(result.file_url.endsWith(".webm") || result.file_url.endsWith(".mp4")) {
                     result.type = "video";
                 } else {
                     result.type = "image";
