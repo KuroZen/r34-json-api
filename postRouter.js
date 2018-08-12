@@ -40,6 +40,7 @@ postRouter.get('/', function (req, res) {
             return $("post").map(function () {
                 let result = this.attribs;
                 result.comments_url = process.env.HOST + '/comments?post_id=' + result.id;
+                result.tags = result.tags.split(" ").filter(tag => tag !== "");
                 return result;
             }).get();
         },
