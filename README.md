@@ -9,8 +9,8 @@ Posts can be accessed with ```/posts``` or ```/p```.
 * **limit** - Number of posts to get, capped at 100.
 * **pid** - Specifies the page number.
 * **tags** - Refine your search, seperate multiple tags with ```+```.
-* **post_id** - Allows you to get all comments of a single post.
-* **post_id** - Allows you to get all comments of a single post.
+* **cid** - Change id in Unix time.
+* **id** - Id of the post.
 
 All of these are optional.
 
