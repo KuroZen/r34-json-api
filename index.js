@@ -11,10 +11,12 @@ process.env.PORT = process.env.PORT || 8080;
 process.env.HOST = process.env.HOST || 'http://localhost:' + process.env.PORT;
 
 // require routers
+const defaultRouter = require('./defaultRouter');
 const commentRouter = require('./commentRouter');
 const postRouter = require('./postRouter');
 
 // assign routers
+app.use('/', defaultRouter);
 app.use('/comments', commentRouter);
 app.use('/posts', postRouter);
 
