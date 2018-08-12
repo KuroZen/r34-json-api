@@ -3,12 +3,14 @@
 // require packages
 const scraperjs = require('scraperjs');
 const express = require('express');
+const cors = require('cors');
 
 // setup
 const app = express();
 const serviceUrl = 'https://rule34.xxx/index.php?page=dapi&q=index';
 process.env.PORT = process.env.PORT || 8080;
 process.env.HOST = process.env.HOST || 'http://localhost:' + process.env.PORT;
+app.use(cors());
 
 // require routers
 const defaultRouter = require('./defaultRouter');
