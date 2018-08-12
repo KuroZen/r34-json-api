@@ -11,7 +11,9 @@
     "url": "git+https://github.com/KuroZen/r34-json-api.git"
   },
   "keywords": [
-    "rule34", "api", "json"
+    "rule34",
+    "api",
+    "json"
   ],
   "author": "KuroZen",
   "license": "ISC",
@@ -21,6 +23,8 @@
   "homepage": "https://github.com/KuroZen/r34-json-api#readme",
   "dependencies": {
     "express": "^4.16.3",
+    "jquery": "^3.3.1",
+    "lodash": "^4.17.10",
     "npm": "^6.3.0",
     "scraperjs": "^1.2.0"
   }
