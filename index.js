@@ -16,11 +16,13 @@ app.use(cors());
 const defaultRouter = require('./defaultRouter');
 const commentRouter = require('./commentRouter');
 const postRouter = require('./postRouter');
+const tagRouter = require("./tagRouter");
 
 // assign routers
 app.use('/', defaultRouter);
 app.use('/comments', commentRouter);
 app.use('/posts', postRouter);
+app.use("/tags", tagRouter);
 
 app.use('/c', commentRouter);
 app.use('/p', postRouter);
