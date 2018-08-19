@@ -1,5 +1,5 @@
 const express = require('express');
-const scraper = require('./scraper');
+const scraper = require('../misc/scraper');
 const tagRouter = express.Router();
 
 const baseUrl = 'https://rule34.xxx/index.php?page=tags&s=list';

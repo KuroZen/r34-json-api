@@ -13,16 +13,18 @@ process.env.HOST = process.env.HOST || 'http://localhost:' + process.env.PORT;
 app.use(cors());
 
 // require routers
-const defaultRouter = require('./defaultRouter');
-const commentRouter = require('./commentRouter');
-const postRouter = require('./postRouter');
-const tagRouter = require("./tagRouter");
+const defaultRouter = require('./routing/default');
+const commentRouter = require('./routing/comments');
+const postRouter = require('./routing/posts');
+const tagRouter = require("./routing/tags");
+const imageRouter = require("./routing/images");
 
 // assign routers
 app.use('/', defaultRouter);
 app.use('/comments', commentRouter);
 app.use('/posts', postRouter);
 app.use("/tags", tagRouter);
+app.use("/images", imageRouter);
 
 app.use('/c', commentRouter);
 app.use('/p', postRouter);
