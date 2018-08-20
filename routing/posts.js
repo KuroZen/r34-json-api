@@ -57,6 +57,11 @@ postRouter.get('/', function (req, res) {
                     result.type = "image";
                 }
 
+                //modify urls
+                result.file_url = process.env.HOST + "/images?url=" + result.file_url;
+                result.preview_url = process.env.HOST + "/images?url=" + result.preview_url;
+                result.sample_url = process.env.HOST + "/images?url=" + result.sample_url;
+
                 return result;
             }).get();
         },
