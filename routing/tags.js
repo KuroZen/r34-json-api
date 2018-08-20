@@ -7,8 +7,27 @@ const baseUrl = 'https://rule34.xxx/index.php?page=tags&s=list';
 tagRouter.get('/', function (req, res) {
     let url = baseUrl;
 
-    if (req.query.pid) {
-        url += "&pid=" + req.query.pid;
+    if (req.query.name) {
+        url += "&tags=" + req.query.name;
+    }
+
+    if (req.query.sort) {
+        url += "&sort=" + req.query.sort;
+    }
+
+    if (req.query.order_by) {
+        let translated;
+        switch (req.query.order_by) {
+            case "name":
+                translated = "tag";
+                break;
+            case "posts":
+                translated = "index_count";
+                break;
+            default:
+                translated = req.query.order_by;
+        }
+        url += "&order_by=" + translated;
     }
 
     scraper(url,
@@ -31,14 +50,8 @@ tagRouter.get('/', function (req, res) {
 
             // filter tags
             if (req.query.type) {
-                tags = tags.filter(function(tag){
+                tags = tags.filter(function (tag) {
                     return tag.types.includes(req.query.type);
-                });
-            }
-
-            if (req.query.name) {
-                tags = tags.filter(function(tag){
-                    return tag.name.includes(req.query.name);
                 });
             }
 
