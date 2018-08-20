@@ -61,6 +61,7 @@ postRouter.get('/', function (req, res) {
                 result.file_url = process.env.HOST + "/images?url=" + result.file_url;
                 result.preview_url = process.env.HOST + "/images?url=" + result.preview_url;
                 result.sample_url = process.env.HOST + "/images?url=" + result.sample_url;
+                result.creator_url = "https://rule34.xxx/index.php?page=account&s=profile&id=" + result.creator_id;
 
                 return result;
             }).get();

@@ -18,6 +18,7 @@ const commentRouter = require('./routing/comments');
 const postRouter = require('./routing/posts');
 const tagRouter = require("./routing/tags");
 const imageRouter = require("./routing/images");
+const artistRouter = require("./routing/artists");
 
 // assign routers
 app.use('/', defaultRouter);
@@ -25,9 +26,13 @@ app.use('/comments', commentRouter);
 app.use('/posts', postRouter);
 app.use("/tags", tagRouter);
 app.use("/images", imageRouter);
+app.use("/artists", artistRouter);
 
 app.use('/c', commentRouter);
 app.use('/p', postRouter);
+app.use('/t', tagRouter);
+app.use('/i', imageRouter);
+app.use('/a', artistRouter);
 
 // start server
 app.listen(process.env.PORT, function () {
