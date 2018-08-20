@@ -55,6 +55,10 @@ tagRouter.get('/', function (req, res) {
                 });
             }
 
+            if(req.query.limit && req.query.limit < tags.length) {
+                tags = tags.length = limit;
+            }
+
             return tags;
         },
         function (comments) {
