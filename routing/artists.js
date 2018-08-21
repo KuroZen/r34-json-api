@@ -16,6 +16,11 @@ artistRouter.get('/', function (req, res) {
             let artist = {};
 
             artist.name = $('div[id="artist"] h3').text().replace("Artist: ", "");
+
+            artist.urls = $("#artist a").map(function() {
+                return this.attribs.href;
+            }).get();
+
             artist.posts = process.env.HOST + "/posts?tags=" + artist.name;
 
             return artist;
